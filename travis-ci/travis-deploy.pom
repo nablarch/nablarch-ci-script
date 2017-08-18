@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"                                                                                                                                            
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nablarch.dev</groupId>
+  <artifactId>travis-site-deploy</artifactId>
+  <packaging>pom</packaging>
+  <version>1</version>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav-jackrabbit</artifactId>
+        <version>1.0-beta-7</version>
+      </extension>
+    </extensions>
+  </build>
+  
+  <distributionManagement>
+    <repository>
+      <id>travis</id>
+      <url>http://ec2-52-199-35-248.ap-northeast-1.compute.amazonaws.com/repo/</url>
+    </repository>
+    <site>
+      <id>travis</id>
+      <url>dav:http://ec2-52-199-35-248.ap-northeast-1.compute.amazonaws.com/test-report/nablarch/${repo_name}/${timestamp}/</url>
+    </site>
+  </distributionManagement>
+  
+</project>
