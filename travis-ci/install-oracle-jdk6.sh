@@ -4,7 +4,7 @@ set -euo pipefail
 
 ### Import nablarch env.
 CUR=$(cd $(dirname $0); pwd)
-source ${CUR}/nablarch_env
+source ${CUR}/config/nablarch_env
 
 DOWNLOAD_USER=nablarch
 DOWNLOAD_PASS=${NABLARCH_PASS}
@@ -20,7 +20,7 @@ pushd ~/
 chmod +x jdk-6u45-linux-x64.bin && ./jdk-6u45-linux-x64.bin > /dev/null
 
 
-cat << 'EOT' >> ${CUR}/nablarch_env
+cat << 'EOT' >> ${CUR}/config/nablarch_env
 
 export JAVA_HOME=~/jdk1.6.0_45
 export PATH="${JAVA_HOME}/bin/:${PATH}"

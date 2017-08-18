@@ -4,7 +4,7 @@ set -euo pipefail
 
 ### Import nablarch env.
 CUR=$(cd $(dirname $0); pwd)
-source ${CUR}/nablarch_env
+source ${CUR}/config/nablarch_env
 
 DOWNLOAD_USER=nablarch
 DOWNLOAD_PASS=${NABLARCH_PASS}

@@ -4,13 +4,13 @@ set -euo pipefail
 
 ### Import nablarch env.
 CUR=$(cd $(dirname $0); pwd)
-source ${CUR}/nablarch_env
+source ${CUR}/config/nablarch_env
 
 cd ${TRAVIS_BUILD_DIR}
 
 
-cp $HOME/build-script/travis-ci/travis-deploy.pom ./
-cp $HOME/build-script/travis-ci/travis-server-settings.xml ./
+cp $HOME/build-script/travis-ci/config/travis-deploy.pom ./
+cp $HOME/build-script/travis-ci/config/travis-server-settings.xml ./
 
 
 ### Encrypt Deploy password.
