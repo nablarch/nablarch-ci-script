@@ -1,0 +1,32 @@
+<settings>                                                                                                                                                                                    
+  <servers>
+    <server>
+      <id>travis</id>
+      <username>nablarch</username>
+      <password>#DEPLOY_PASSWORD#</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>travis-repo</id>
+      <repositories>
+        <repository>
+          <id>travis</id>
+          <url>#DEVELOP_REPO_URL#</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>travis</id>
+          <url>#DEVELOP_REPO_URL#</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>travis-repo</activeProfile>
+  </activeProfiles>
+
+</settings>
