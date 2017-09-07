@@ -24,6 +24,12 @@ do
   esac
 done
 
+
+# Purge local repository of 'com.nablarch'.
+mvn -s travis-settings.xml ${MVN_PROFILE} \
+    dependency:purge-local-repository -Dinclude=com.nablarch.* -DreResolve=false -Dverbose=true
+
+
 if [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "develop"  ]; then
 
   mvn -s travis-settings.xml ${MVN_PROFILE} \

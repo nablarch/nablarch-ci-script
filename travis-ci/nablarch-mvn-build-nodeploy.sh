@@ -20,6 +20,12 @@ do
   esac
 done
 
+
+# Purge local repository of 'com.nablarch'.
+mvn -s travis-settings.xml ${MVN_PROFILE} \
+    dependency:purge-local-repository -Dinclude=com.nablarch.* -DreResolve=false -Dverbose=true
+
+
 mvn -s travis-settings.xml ${MVN_PROFILE} \
     -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
     test
