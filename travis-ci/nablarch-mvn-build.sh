@@ -12,8 +12,8 @@ export LC_ALL=ja_JP.UTF-8
 
 
 ### Main Build.
-# if it creates pull request, execute `gradlew build` only.
-# if it merges pull request to develop branch or dilectly commit on develop branch, execute `gradlew uploadArchives`.
+# if it creates pull request, execute `mvn test` only.
+# if it merges pull request to develop branch or dilectly commit on develop branch, execute `mvn deploy`.
 # Waning, TRAVIS_PULL_REQUEST variable is 'false' or pull request number, 1,2,3 and so on.
 
 MVN_PROFILE=""
