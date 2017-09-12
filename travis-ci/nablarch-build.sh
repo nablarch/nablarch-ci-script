@@ -6,6 +6,11 @@ set -euo pipefail
 CUR=$(cd $(dirname $0); pwd)
 source ${CUR}/config/nablarch_env
 
+
+### Confirm build enviroment.
+java -version
+
+
 cd ${TRAVIS_BUILD_DIR}
 
 
