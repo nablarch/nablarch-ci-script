@@ -28,7 +28,6 @@ done
 # Purge local repository of 'com.nablarch'.
 mvn -s travis-settings.xml ${MVN_PROFILE} \
    -Dinclude=com.nablarch.* \
-   -Dexclude=com.nablarch.example:nablarch-example-mom-testing-common* \
    -DreResolve=false \
    -Dverbose=true \
    dependency:purge-local-repository
