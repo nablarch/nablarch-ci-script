@@ -25,13 +25,6 @@ mvn_deploy() {
 
   pushd $1
 
-  # Purge local repository of 'com.nablarch'.
-  mvn -s ../travis-settings.xml ${MVN_PROFILE} \
-     -Dinclude=com.nablarch.* \
-     -DreResolve=false \
-     -Dverbose=true \
-     dependency:purge-local-repository
-
   # Deploy
   mvn -s ../travis-settings.xml ${MVN_PROFILE} \
     -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \

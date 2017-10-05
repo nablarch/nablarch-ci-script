@@ -26,3 +26,10 @@ sed -i -e "s@#DEPLOY_PASSWORD#@${ENC_PASS}@" travis-settings.xml
 ### Set Develop Repository for Travis build.
 sed -i -e "s@#DEVELOP_REPO_URL#@${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}@" travis-settings.xml
 
+
+# Purge local repository of 'com.nablarch'.
+mvn -s travis-settings.xml \
+   -Dinclude=com.nablarch.* \
+   -DreResolve=false \
+   -Dverbose=true \
+   dependency:purge-local-repository

@@ -11,25 +11,7 @@ source ${CUR}/config/nablarch_env
 export LC_ALL=ja_JP.UTF-8
 
 
-### Main Build.
-MVN_PROFILE=""
-while getopts p: OPT
-do
-  case $OPT in
-    "p" ) MVN_PROFILE="-P $OPTARG";;
-  esac
-done
-
-
-# Purge local repository of 'com.nablarch'.
-mvn -s travis-settings.xml ${MVN_PROFILE} \
-   -Dinclude=com.nablarch.* \
-   -DreResolve=false \
-   -Dverbose=true \
-   dependency:purge-local-repository
-
-
-# Install nablarch-example-mom-testing-common.
+### Install nablarch-example-mom-testing-common.
 pushd /tmp
 git clone -b develop https://github.com/nablarch/nablarch-example-mom-testing-common.git
 
@@ -41,9 +23,3 @@ mvn -s ${TRAVIS_BUILD_DIR}/travis-settings.xml \
 
 popd
 popd
-
-
-# Main Build.
-mvn -s travis-settings.xml ${MVN_PROFILE} \
-    -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
-    test

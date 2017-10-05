@@ -25,14 +25,6 @@ do
 done
 
 
-# Purge local repository of 'com.nablarch'.
-mvn -s travis-settings.xml ${MVN_PROFILE} \
-   -Dinclude=com.nablarch.* \
-   -DreResolve=false \
-   -Dverbose=true \
-   dependency:purge-local-repository
-
-
 if [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "develop"  ]; then
 
   mvn -s travis-settings.xml ${MVN_PROFILE} \
