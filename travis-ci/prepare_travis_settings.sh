@@ -28,8 +28,4 @@ sed -i -e "s@#DEVELOP_REPO_URL#@${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}@" travi
 
 
 # Purge local repository of 'com.nablarch'.
-mvn -s travis-settings.xml \
-   -Dinclude=com.nablarch.* \
-   -DreResolve=false \
-   -Dverbose=true \
-   dependency:purge-local-repository
+rm -rf /home/travis/.m2/repository/com/nablarch/
