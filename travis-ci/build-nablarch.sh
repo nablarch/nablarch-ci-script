@@ -20,7 +20,7 @@ export LC_ALL=ja_JP.UTF-8
 MODE="no_deploy"
 MVN_PROFILE=""
 
-while getopts d:p: OPT
+while getopts m:p: OPT
 do
   case $OPT in
     "m" ) MODE=${OPTARG};;
