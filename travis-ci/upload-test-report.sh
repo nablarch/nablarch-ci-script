@@ -20,8 +20,7 @@ do
   esac
 done
 
-mvn -s travis-settings.xml \
-    -P ${MVN_PROFILE} \
+mvn -s travis-settings.xml ${MVN_PROFILE} \
     -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
     -Ddevelop_test_report_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_TEST_REPORT_NAME}/nablarch/${repo_name}/${timestamp}" \
     -Dmaven.test.skip=true \
