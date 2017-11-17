@@ -10,8 +10,18 @@ source ${CUR}/config/nablarch_env
 repo_name="$(basename ${TRAVIS_BUILD_DIR})"
 timestamp="$(date +%Y%m%d%H%M%S)"
 
+
+MVN_PROFILE=""
+
+while getopts p: OPT
+do
+  case $OPT in
+    "p" ) MVN_PROFILE="-P $OPTARG";;
+  esac
+done
+
 mvn -s travis-settings.xml \
-    -P travis \
+    -P ${MVN_PROFILE} \
     -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
     -Ddevelop_test_report_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_TEST_REPORT_NAME}/nablarch/${repo_name}/${timestamp}" \
     -Dmaven.test.skip=true \
