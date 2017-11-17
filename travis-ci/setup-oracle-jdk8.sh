@@ -11,8 +11,8 @@ source ${CUR}/config/nablarch_env
 
 cat << 'EOT' >> ${CUR}/config/nablarch_env
 
-export TEST_JDK="${JAVA_HOME}"
 export COMPILE_JAVA_HOME="${JAVA_HOME}"
+export TEST_JDK="${COMPILE_JAVA_HOME}"
 
 EOT
 
