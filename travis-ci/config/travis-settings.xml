@@ -1,7 +1,7 @@
 <settings>                                                                                                                                                                                    
   <servers>
     <server>
-      <id>travis</id>
+      <id>dev-deploy</id>
       <username>nablarch</username>
       <password>#DEPLOY_PASSWORD#</password>
     </server>
