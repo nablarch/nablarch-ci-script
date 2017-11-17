@@ -29,9 +29,8 @@ do
 done
 
 
-if [ "${TRAVIS_PULL_REQUEST}" == "false" \
-       -a "${TRAVIS_BRANCH}" == "develop" \
-       -a "${MODE}" == "deploy" ]; then
+if [ "${TRAVIS_PULL_REQUEST}" == "false" ] && [ "${TRAVIS_BRANCH}" == "develop" ] && [ "${MODE}" == "deploy" ] \
+   || echo "${TRAVIS_COMMIT_MESSAGE}" | grep -E '^\[\[TRAVIS FORCE DEPLOY\]\]' >/dev/null ; then
 
   mvn -s travis-settings.xml ${MVN_PROFILE} \
       -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
