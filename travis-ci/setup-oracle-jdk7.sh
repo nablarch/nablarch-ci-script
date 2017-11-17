@@ -22,8 +22,8 @@ tar xf ./jdk-7u80-linux-x64.tar.gz
 
 cat << 'EOT' >> ${CUR}/config/nablarch_env
 
-export TEST_JDK=~/jdk1.7.0_80
-export COMPILE_JAVA_HOME="${JAVA_HOME}"
+export COMPILE_JAVA_HOME=~/jdk1.7.0_80
+export TEST_JDK="${COMPILE_JAVA_HOME}"
 
 EOT
 
