@@ -22,8 +22,9 @@ chmod +x jdk-6u45-linux-x64.bin && ./jdk-6u45-linux-x64.bin > /dev/null
 
 cat << 'EOT' >> ${CUR}/config/nablarch_env
 
-export JAVA_HOME=~/jdk1.6.0_45
-export PATH="${JAVA_HOME}/bin/:${PATH}"
+export TEST_JDK=~/jdk1.6.0_45
+export COMPILE_JAVA_HOME="${JAVA_HOME}"
+
 EOT
 
 popd
