@@ -15,5 +15,3 @@ export COMPILE_JAVA_HOME="${JAVA_HOME}"
 export TEST_JDK="${COMPILE_JAVA_HOME}"
 
 EOT
-
-popd
