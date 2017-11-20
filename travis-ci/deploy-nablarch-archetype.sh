@@ -16,7 +16,7 @@ pushd nablarch-archetype-parent
 
 mvn -s ../travis-settings.xml \
   -Durl=dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME} \
-  -DrepositoryId=travis \
+  -DrepositoryId=dev-deploy \
   -Dfile=pom.xml \
   -DpomFile=pom.xml \
   -DgeneratePom=false \
