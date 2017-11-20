@@ -17,7 +17,7 @@ export LC_ALL=ja_JP.UTF-8
 # Waning, TRAVIS_PULL_REQUEST variable is 'false' or pull request number, 1,2,3 and so on.
 
 
-MODE="no_deploy"
+MODE="nodeploy"
 MVN_PROFILE=""
 
 while getopts m:p: OPT
