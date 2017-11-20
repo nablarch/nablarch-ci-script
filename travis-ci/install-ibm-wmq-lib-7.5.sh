@@ -30,5 +30,6 @@ install_jar com.ibm.mq.headers.jar com.ibm com.ibm.mq.headers 7.5
 install_jar com.ibm.mq.jmqi.jar com.ibm com.ibm.mq.jmqi 7.5
 install_jar com.ibm.mq.pcf.jar com.ibm com.ibm.mq.pcf 7.5
 install_jar com.ibm.mq.jar com.ibm com.ibm.mq 7.5
+install_jar connector.jar javax.resource connector 1.0
 
 popd
