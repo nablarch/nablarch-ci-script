@@ -12,6 +12,14 @@ UPLOAD_PASS=${NABLARCH_PASS}
 UPLOAD_URL=${DEVELOP_REPO_URL}
 
 
+while getopts d: OPT
+do
+  case $OPT in
+    "d" ) UPLOAD_SRC_DIR="${OPTARG}";;
+  esac
+done
+
+
 # Upload Unit test report.
 function uploadDir() {
 
@@ -70,9 +78,9 @@ function uploadDir() {
 set +e
 upload_base_dir="${TRAVIS_REPO_SLUG}/${TRAVIS_BUILD_NUMBER}_`date +%Y%m%d_%H%M%S`"
 
-for upload_local_dir in $(find -wholename '*build/reports/tests' -printf '%P\n')
+for upload_local_dir in $(find -wholename "*${UPLOAD_SRC_DIR}" -printf '%P\n')
 do
-  sub_dir=$(echo ${upload_local_dir} | sed -e 's#[/]*build/reports/tests##')
+  sub_dir=$(echo ${upload_local_dir} | sed -e "s#[/]*${UPLOAD_SRC_DIR}##")
 
   if [ -n "${sub_dir}" ]; then
     # Multi Module Project
