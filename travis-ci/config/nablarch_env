@@ -1,6 +1,6 @@
 ### Deploy Info
 export NABLARCH_USER=nablarch
-export DEVELOP_REPO_URL=http://ec2-52-199-35-248.ap-northeast-1.compute.amazonaws.com
+export DEVELOP_REPO_URL=https://bisco.adc-tis.com/nexus/repository/maven-public
 export DEVELOP_REPO_NAME=repo
 export DEVELOP_TEST_REPORT_NAME=test-report
 

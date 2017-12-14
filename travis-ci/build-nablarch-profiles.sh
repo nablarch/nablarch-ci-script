@@ -12,7 +12,9 @@ export LC_ALL=ja_JP.UTF-8
 
 
 ### Main Build.
+
 MVN_PROFILE=""
+
 while getopts p: OPT
 do
   case $OPT in
@@ -21,17 +23,15 @@ do
 done
 
 
-mvn_deploy() {
+mvn_install() {
 
   pushd $1
 
-  # Deploy
-  mvn -s ../travis-settings.xml ${MVN_PROFILE} \
-    -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
-    deploy
+  # Install
+  mvn -s ../travis-settings.xml ${MVN_PROFILE} install
 
   popd
 }
 
-mvn_deploy nablarch-bom
-mvn_deploy nablarch-profile-parent
+mvn_install nablarch-bom
+mvn_install nablarch-profile-parent
