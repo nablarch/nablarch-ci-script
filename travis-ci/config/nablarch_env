@@ -1,8 +1,9 @@
 ### Deploy Info
 export NABLARCH_USER=nablarch
-export DEVELOP_REPO_URL=https://bisco.adc-tis.com/nexus/repository
+export DEVELOP_BASE_URL=https://bisco.adc-tis.com
+export DEVELOP_REPO_URL=${DEVELOP_BASE_URL}/nexus/repository
 export DEVELOP_REPO_NAME=maven-public
-export DEVELOP_TEST_REPORT_NAME=test-report
+export DEVELOP_TEST_REPORT_URL=${DEVELOP_BASE_URL}/test-report
 
 ### Setup
 DOWNLOAD_USER=nablarch

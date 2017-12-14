@@ -22,7 +22,7 @@ done
 
 mvn -s travis-settings.xml ${MVN_PROFILE} \
     -Ddevelop_repo_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_REPO_NAME}" \
-    -Ddevelop_test_report_url="dav:${DEVELOP_REPO_URL}/${DEVELOP_TEST_REPORT_NAME}/nablarch/${repo_name}/${timestamp}" \
+    -Ddevelop_test_report_url="dav:${DEVELOP_TEST_REPORT_URL}/nablarch/${repo_name}/${timestamp}" \
     -Dmaven.test.skip=true \
     -l mvn_build.log \
     site site:deploy
@@ -32,5 +32,5 @@ if [ $? -eq 0 ]; then
   echo
   echo
   echo "Save unit test report."
-  echo "  ${DEVELOP_REPO_URL}/${DEVELOP_TEST_REPORT_NAME}/nablarch/${repo_name}/${timestamp}"
+  echo "  ${DEVELOP_TEST_REPORT_URL}/nablarch/${repo_name}/${timestamp}/"
 fi

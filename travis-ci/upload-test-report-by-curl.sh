@@ -9,7 +9,6 @@ source ${CUR}/config/nablarch_env
 
 UPLOAD_USER=nablarch
 UPLOAD_PASS=${NABLARCH_PASS}
-UPLOAD_URL=${DEVELOP_REPO_URL}
 
 
 while getopts d: OPT
@@ -39,7 +38,7 @@ function uploadDir() {
    for it in ${_remote_base_dir}; do
      tmp_dir="${tmp_dir}/${it}"
      curl -sS --digest --user ${UPLOAD_USER}:${UPLOAD_PASS} -X MKCOL \
-      "${UPLOAD_URL}/test-report${tmp_dir}" > /dev/null
+      "${DEVELOP_TEST_REPORT_URL}${tmp_dir}" > /dev/null
    done
   )
 
@@ -54,7 +53,7 @@ function uploadDir() {
     fi
   
     curl -sS --digest --user ${UPLOAD_USER}:${UPLOAD_PASS} -X MKCOL \
-      ${UPLOAD_URL}/test-report/${_remote_base_dir}/${vd} > /dev/null
+      ${DEVELOP_TEST_REPORT_URL}/test-report/${_remote_base_dir}/${vd} > /dev/null
   done
   
   ### Finally, upload all files.
@@ -68,7 +67,7 @@ function uploadDir() {
     fi
   
     curl -sS --digest --user ${UPLOAD_USER}:${UPLOAD_PASS} --upload-file ${vf} \
-      ${UPLOAD_URL}/test-report/${_remote_base_dir}/${vf} > /dev/null
+      ${DEVELOP_TEST_REPORT_URL}/${_remote_base_dir}/${vf} > /dev/null
   done
 
   popd > /dev/null
@@ -99,5 +98,5 @@ if [ $? -eq 0 ]; then
   echo
   echo
   echo "Save unit test report."
-  echo "  ${UPLOAD_URL}/test-report/${upload_base_dir}"
+  echo "  ${DEVELOP_TEST_REPORT_URL}/${upload_base_dir}/"
 fi
