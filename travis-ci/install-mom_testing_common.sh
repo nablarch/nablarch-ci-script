@@ -6,7 +6,6 @@ set -euo pipefail
 CUR=$(cd $(dirname $0); pwd)
 source ${CUR}/config/nablarch_env
 
-
 ### Setting locale.
 export LC_ALL=ja_JP.UTF-8
 
